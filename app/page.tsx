@@ -8,7 +8,6 @@ export default function Home() {
   const [cameraActive, setCameraActive] = useState(false);
   const [gestureStatus, setGestureStatus] = useState('Camera Off');
 
-  // Toggle Camera and Hand Tracking
   const toggleCamera = async () => {
     if (cameraActive) {
       if (videoRef.current && videoRef.current.srcObject) {
@@ -37,7 +36,6 @@ export default function Home() {
     }
   };
 
-  // Brightness Motion Tracking Strategy for Hand Scrolling
   const startHandTracking = () => {
     let lastY: number | null = null;
     const canvas = document.createElement('canvas');
@@ -87,13 +85,10 @@ export default function Home() {
 
   return (
     <div className="relative min-h-[200vh] bg-white text-slate-800 flex flex-col items-center justify-start p-6 overflow-x-hidden selection:bg-emerald-100 selection:text-emerald-900">
-      
-      {/* Dynamic Animated Moving Background Objects */}
       <div className="fixed top-12 left-10 w-80 h-80 bg-emerald-100/50 rounded-full blur-3xl animate-pulse pointer-events-none -z-10" />
       <div className="fixed bottom-24 right-12 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl animate-pulse delay-700 pointer-events-none -z-10" />
       <div className="fixed top-1/2 left-1/3 w-64 h-64 bg-green-50/60 rounded-full blur-2xl animate-bounce duration-[10000ms] pointer-events-none -z-10" />
 
-      {/* Floating Camera Gesture Widget */}
       <div className="fixed top-20 right-6 z-40 bg-white/90 backdrop-blur-md p-3.5 rounded-2xl shadow-2xl border border-emerald-100 flex flex-col items-center gap-2 max-w-[210px] transition-all hover:border-emerald-300">
         <video 
           ref={videoRef} 
@@ -102,14 +97,13 @@ export default function Home() {
         />
         <button
           onClick={toggleCamera}
-          className="w-full py-2.5 px-3 text-xs font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-md hover:shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-1.5"
+          className="w-full py-2.5 px-3 text-xs font-bold rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white shadow-md hover:shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
         >
           <span>{cameraActive ? '🛑 Disable Motion' : '🖐️ Enable Hand Scroll'}</span>
         </button>
         <span className="text-[10px] font-semibold text-slate-500 tracking-wide text-center uppercase">{gestureStatus}</span>
       </div>
 
-      {/* Navigation Header */}
       <header className="w-full max-w-5xl flex justify-between items-center py-4 px-6 bg-white/80 backdrop-blur-xl rounded-2xl shadow-sm border border-emerald-100/80 mt-2 sticky top-4 z-30">
         <div className="flex items-center gap-3">
           <Image
@@ -137,7 +131,6 @@ export default function Home() {
         </a>
       </header>
 
-      {/* Hero Section */}
       <main className="max-w-3xl text-center flex flex-col items-center space-y-8 my-20">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 border border-emerald-200/80 rounded-full text-xs font-bold uppercase tracking-wider shadow-sm animate-pulse">
           ✨ Next-Gen WhatsApp Automation
@@ -151,7 +144,6 @@ export default function Home() {
           Lightweight, ultra-fast WhatsApp conversational workflows designed for seamless audience interaction and operations.
         </p>
 
-        {/* Attractive Action Buttons */}
         <div className="flex flex-wrap justify-center items-center gap-4 pt-4">
           <a
             href="https://wa.me/923008841611"
@@ -167,14 +159,13 @@ export default function Home() {
 
           <button
             onClick={toggleCamera}
-            className="px-8 py-4 bg-white hover:bg-emerald-50/50 text-slate-800 font-bold text-base rounded-2xl border border-emerald-200 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95 flex items-center gap-2"
+            className="px-8 py-4 bg-white hover:bg-emerald-50/50 text-slate-800 font-bold text-base rounded-2xl border border-emerald-200 shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1 active:scale-95 flex items-center gap-2 cursor-pointer"
           >
             <span>🖐️ Try Motion Scroll</span>
           </button>
         </div>
       </main>
 
-      {/* Features Cards Grid */}
       <section className="w-full max-w-4xl py-16 space-y-10">
         <h2 className="text-3xl font-extrabold text-center text-slate-900 tracking-tight">Key Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -191,12 +182,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="w-full text-center py-10 text-sm text-slate-500 border-t border-slate-100 mt-auto">
         © {new Date().getFullYear()} CmBuddy. All rights reserved.
       </footer>
 
-      {/* Animated Floating WhatsApp Action CTA */}
       <a
         href="https://wa.me/923008841611"
         target="_blank"
@@ -205,10 +194,9 @@ export default function Home() {
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white rounded-full shadow-2xl shadow-emerald-300 transition-all hover:scale-110 active:scale-95 animate-bounce"
       >
         <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
         </svg>
       </a>
-
     </div>
   );
 }
