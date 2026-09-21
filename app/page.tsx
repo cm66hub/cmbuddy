@@ -86,14 +86,14 @@ export default function Home() {
   };
 
   return (
-    <div className="relative min-h-[200vh] bg-gradient-to-br from-slate-50 via-indigo-50/50 to-purple-50 text-slate-800 flex flex-col items-center justify-start p-6 overflow-x-hidden">
+    <div className="relative min-h-[200vh] bg-slate-50/50 text-slate-800 flex flex-col items-center justify-start p-6 overflow-x-hidden">
       
-      {/* Animated Floating Background Elements */}
-      <div className="fixed top-12 left-10 w-72 h-72 bg-purple-200/50 rounded-full blur-3xl animate-pulse -z-10" />
-      <div className="fixed bottom-16 right-10 w-96 h-96 bg-blue-200/50 rounded-full blur-3xl animate-pulse delay-1000 -z-10" />
+      {/* Soft Floating Background Glows (WhatsApp Mint/Green theme) */}
+      <div className="fixed top-10 left-1/4 w-80 h-80 bg-emerald-100/60 rounded-full blur-3xl animate-pulse -z-10" />
+      <div className="fixed bottom-20 right-1/4 w-96 h-96 bg-teal-100/50 rounded-full blur-3xl animate-pulse delay-1000 -z-10" />
 
       {/* Floating Camera Gesture Control Box */}
-      <div className="fixed top-20 right-6 z-40 bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-indigo-100 flex flex-col items-center gap-2 max-w-[200px]">
+      <div className="fixed top-20 right-6 z-40 bg-white/90 backdrop-blur-md p-3 rounded-2xl shadow-lg border border-emerald-100 flex flex-col items-center gap-2 max-w-[200px]">
         <video 
           ref={videoRef} 
           className={cameraActive ? "w-full h-28 object-cover rounded-lg bg-black block" : "w-full h-28 object-cover rounded-lg bg-black hidden"} 
@@ -101,7 +101,7 @@ export default function Home() {
         />
         <button
           onClick={toggleCamera}
-          className="w-full py-2 px-3 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-md transition-all"
+          className="w-full py-2 px-3 text-xs font-semibold rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm transition-all"
         >
           {cameraActive ? 'Stop Camera Gesture' : 'Enable Hand Scroll'}
         </button>
@@ -109,7 +109,7 @@ export default function Home() {
       </div>
 
       {/* Navigation Header */}
-      <header className="w-full max-w-5xl flex justify-between items-center py-4 px-6 bg-white/70 backdrop-blur-md rounded-2xl shadow-sm border border-white/50 mt-2 sticky top-4 z-30">
+      <header className="w-full max-w-5xl flex justify-between items-center py-4 px-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-sm border border-emerald-100/80 mt-2 sticky top-4 z-30">
         <div className="flex items-center gap-3">
           <Image
             src="/logo.png"
@@ -118,7 +118,7 @@ export default function Home() {
             height={40}
             className="rounded-xl shadow-sm hover:scale-105 transition-transform"
           />
-          <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <span className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-teal-700 bg-clip-text text-transparent">
             CmBuddy
           </span>
         </div>
@@ -126,7 +126,7 @@ export default function Home() {
           href="https://wa.me/923008841611"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-md hover:shadow-lg transition-all"
+          className="px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-medium rounded-xl shadow-sm hover:shadow-md transition-all"
         >
           Get Started
         </a>
@@ -134,16 +134,16 @@ export default function Home() {
 
       {/* Hero Section */}
       <main className="max-w-3xl text-center flex flex-col items-center space-y-8 my-16">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100/80 text-indigo-700 rounded-full text-sm font-semibold tracking-wide shadow-inner">
-          Next-Gen AI Automation
+        <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 border border-emerald-200/60 rounded-full text-sm font-semibold tracking-wide shadow-sm">
+          Next-Gen WhatsApp Automation
         </div>
 
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
-          Transform Your Messaging Experience with <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">CmBuddy</span>
+          Supercharge Your Communications with <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-green-500 bg-clip-text text-transparent">CmBuddy</span>
         </h1>
 
         <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
-          Smart AI-powered conversational automation tailored for seamless integration and effortless business operations.
+          Bright, fast, and automated WhatsApp conversational flows built to seamlessly grow your operations.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 pt-4">
@@ -151,7 +151,7 @@ export default function Home() {
             href="https://wa.me/923008841611"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold rounded-2xl shadow-lg shadow-indigo-200 transition-all transform hover:-translate-y-0.5"
+            className="px-8 py-3.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold rounded-2xl shadow-lg shadow-emerald-100 transition-all transform hover:-translate-y-0.5"
           >
             Connect on WhatsApp
           </a>
@@ -162,12 +162,12 @@ export default function Home() {
       <section className="w-full max-w-4xl py-20 space-y-12">
         <h2 className="text-3xl font-bold text-center text-slate-800">Key Features</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="p-6 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-white/80">
-            <h3 className="text-xl font-bold text-indigo-600 mb-2">Automated Messaging</h3>
+          <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-emerald-100">
+            <h3 className="text-xl font-bold text-emerald-600 mb-2">Automated Messaging</h3>
             <p className="text-slate-600">Scale your communication effortlessly with intelligent workflow triggers.</p>
           </div>
-          <div className="p-6 bg-white/60 backdrop-blur-sm rounded-2xl shadow-sm border border-white/80">
-            <h3 className="text-xl font-bold text-purple-600 mb-2">Gesture Navigation</h3>
+          <div className="p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-emerald-100">
+            <h3 className="text-xl font-bold text-teal-600 mb-2">Gesture Navigation</h3>
             <p className="text-slate-600">Control the application hands-free using real-time camera tracking.</p>
           </div>
         </div>
