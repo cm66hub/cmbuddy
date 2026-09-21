@@ -90,7 +90,11 @@ export default function Home() {
 
       {/* Floating Camera Gesture Control Box */}
       <div className="fixed top-20 right-6 z-40 bg-white/80 backdrop-blur-md p-3 rounded-2xl shadow-xl border border-indigo-100 flex flex-col items-center gap-2 max-w-[200px]">
-        <video ref={videoRef} className={w-full h-28 object-cover rounded-lg bg-black } muted />
+        <video 
+          ref={videoRef} 
+          className={cameraActive ? "w-full h-28 object-cover rounded-lg bg-black block" : "w-full h-28 object-cover rounded-lg bg-black hidden"} 
+          muted 
+        />
         <button
           onClick={toggleCamera}
           className="w-full py-2 px-3 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-md transition-all"
