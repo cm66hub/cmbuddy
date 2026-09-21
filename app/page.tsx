@@ -1,6 +1,6 @@
 ﻿'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
@@ -59,7 +59,11 @@ export default function Home() {
         let totalY = 0;
         let count = 0;
         for (let i = 0; i < data.length; i += 16) {
-          const brightness = (data[i] + data[i + 1] + data[i + 2]) / 3;
+          const r = data[i] ?? 0;
+          const g = data[i + 1] ?? 0;
+          const b = data[i + 2] ?? 0;
+          const brightness = (r + g + b) / 3;
+
           if (brightness > 150) {
             const y = Math.floor(i / 4 / canvas.width);
             totalY += y;
