@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
@@ -29,7 +29,7 @@ export default function Home() {
         videoRef.current.play();
       }
       setCameraActive(true);
-      setGestureStatus('Camera Active - Raise hand to scroll');
+      setGestureStatus('Camera Active - Motion Control Enabled');
       startHandTracking();
     } catch (err) {
       console.error('Camera access denied:', err);
@@ -37,7 +37,7 @@ export default function Home() {
     }
   };
 
-  // Simple Brightness Motion Tracking Simulation for Hand Scrolling
+  // Brightness Motion Tracking Strategy for Hand Scrolling
   const startHandTracking = () => {
     let lastY: number | null = null;
     const canvas = document.createElement('canvas');
@@ -56,7 +56,6 @@ export default function Home() {
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = imageData.data;
 
-        // Calculate average Y position of bright moving area
         let totalY = 0;
         let count = 0;
         for (let i = 0; i < data.length; i += 16) {
@@ -96,12 +95,12 @@ export default function Home() {
           onClick={toggleCamera}
           className="w-full py-2 px-3 text-xs font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white shadow-md transition-all"
         >
-          {cameraActive ? 'Stop Camera Gesture' : '??? Enable Hand Scroll'}
+          {cameraActive ? 'Stop Camera Gesture' : 'Enable Hand Scroll'}
         </button>
         <span className="text-[10px] font-medium text-slate-500 text-center">{gestureStatus}</span>
       </div>
 
-      {/* Navigation / Header */}
+      {/* Navigation Header */}
       <header className="w-full max-w-5xl flex justify-between items-center py-4 px-6 bg-white/70 backdrop-blur-md rounded-2xl shadow-sm border border-white/50 mt-2 sticky top-4 z-30">
         <div className="flex items-center gap-3">
           <Image
@@ -128,7 +127,7 @@ export default function Home() {
       {/* Hero Section */}
       <main className="max-w-3xl text-center flex flex-col items-center space-y-8 my-16">
         <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100/80 text-indigo-700 rounded-full text-sm font-semibold tracking-wide shadow-inner">
-          ? Next-Gen AI Automation
+          Next-Gen AI Automation
         </div>
 
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 leading-tight">
@@ -168,7 +167,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="w-full text-center py-8 text-sm text-slate-500">
-        � {new Date().getFullYear()} CmBuddy. All rights reserved.
+        © {new Date().getFullYear()} CmBuddy. All rights reserved.
       </footer>
 
       {/* Floating Animated WhatsApp Action Button */}
