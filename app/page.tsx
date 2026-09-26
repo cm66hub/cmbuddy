@@ -89,7 +89,7 @@ export default function CmBuddyDashboard() {
         radius: Math.random() * 3 + 1,
         vx: (Math.random() - 0.5) * 0.8 * rotationSpeed,
         vy: (Math.random() - 0.5) * 0.8 * rotationSpeed,
-        color: greenShades[Math.floor(Math.random() * greenShades.length)],
+        color: greenShades[Math.floor(Math.random() * greenShades.length)] || '#10b981',
       });
     }
 
@@ -151,6 +151,8 @@ export default function CmBuddyDashboard() {
       // Update and draw particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
+        if (!p) continue;
+
         p.x += p.vx;
         p.y += p.vy;
 
@@ -167,6 +169,8 @@ export default function CmBuddyDashboard() {
         // Connect nearby particles
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
+          if (!p2) continue;
+
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
